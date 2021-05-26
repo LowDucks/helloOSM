@@ -1,10 +1,29 @@
 # Kivy
 from kivy.app import App
 from kivy.lang import Builder
+from kivy.uix.widget import Widget
+from kivy.uix.screenmanager import ScreenManager, Screen
+
 # Kivy MapView
 from kivy.garden.mapview import MapView, MapMarkerPopup
 # Kivy properties
 from kivy.properties import NumericProperty, StringProperty
+
+class MainScreen(Screen):
+    pass
+
+class FirstScreen(Screen):
+    pass
+
+class SecondScreen(Screen):
+    pass
+
+class ThirdScreen(Screen):
+    pass
+
+class WindowManager(ScreenManager):
+    pass
+
 
 class Content(MapView):
     def build(self):
@@ -17,12 +36,16 @@ class POIMarkerPopup(MapMarkerPopup):
     description = StringProperty()
     imageUrl = StringProperty()
 
+
 class MapApp(App):
+
      def build(self):
-         with open('mapViewGUI.kv', encoding='utf8') as f:
-             root_widget = Builder.load_string(f.read())
-         root_widget.build()
-         return root_widget
+         return Builder.load_file('mapViewGUI.kv')
+
+     def change_screen(self, screen, direction):
+         self.root.transition.direction = direction
+         self.root.current = screen
+
 
 if __name__ in ('__main__', '__android__'):
     MapApp().run()

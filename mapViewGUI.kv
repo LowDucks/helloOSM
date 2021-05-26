@@ -1,23 +1,28 @@
 #:import sys sys
 #:import MapSource kivy.garden.mapview.MapSource
 
-Content:
-    lat: 56
-    lon: 11.5
-    zoom: 7
-    map_source: 'osm'
-    CityMarkerPopup:
-        latitude: 55.2258
-        longitude: 11.7595
-        title: 'Næstved'
-        description: 'Verdens navle. Danmarks New York. Capital of Cool.'
-        imageUrl: 'https://naestved.netavis.dk/wp-content/uploads/sites/6/2020/11/unnamed-24.jpg'
-    SchoolMarkerPopup:
-        latitude: 55.0151
-        longitude: 11.9167
-        title: 'Zealand Business College, Teknisk Gymnasium Vordingborg'
-        description: 'For de få men rå.'
-        imageUrl: 'https://www.graakjaer.com/admin/public/getimage.ashx?Image=/Files/A-Photos/References/DK_industry/Undervisning/5089_ZBC_Zealand_business_College_1.jpg&Resolution=72&Compression=90&Width=767&Height=500&Crop=0'
+<Toolbar@BoxLayout>:
+    size_hint_y: None
+    height: '50dp'
+    padding: '4dp'
+    spacing: '4dp'
+    width: '800dp'
+
+    canvas:
+        Color:
+            rgba: .2, .2, .2, .6
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<ShadedLabel@Label>:
+    size: self.texture_size
+    canvas.before:
+        Color:
+            rgba: .2, .2, .2, .6
+        Rectangle:
+            pos: self.pos
+            size: self.size
 
 <SchoolMarkerPopup@POIMarkerPopup>:
     source: 'schoolmarker.png'
@@ -53,3 +58,147 @@ Content:
                     text: root.description
                     halign: 'left'
                     valign: 'top'
+
+
+ScreenManager:
+    MainScreen:
+    FirstScreen:
+    SecondScreen:
+    ThirdScreen:
+
+<MainScreen>:
+    name: 'main'
+
+    Content:
+        id: mapview
+        lat: 56
+        lon: 11.5
+        zoom: 9
+        size_hint: 1, 1
+        pos_hint: {"x": 0, "y": 0}
+        map_source: 'osm'
+
+        Toolbar:
+            top: root.top
+            Button:
+                text: "1 day trip"
+                on_release: app.change_screen("first", "left")
+            Button:
+                text: "2 day trip"
+                on_release: app.change_screen("second", "left")
+            Button:
+                text: "3 day trip"
+                on_release: app.change_screen("third", "left")
+        Toolbar:
+            Label:
+                text: 'Home Screen'
+
+
+
+<FirstScreen>:
+    name: 'first'
+
+    Content:
+        id: mapview
+        lat: 56
+        lon: 11.5
+        zoom: 9
+        size_hint: 1, 1
+        pos_hint: {"x": 0, "y": 0}
+        map_source: 'osm'
+
+        SchoolMarkerPopup:
+            latitude: 55.0151
+            longitude: 11.9167
+            title: 'Zealand Business College, Teknisk Gymnasium Vordingborg'
+            description: 'For de få men rå.'
+            imageUrl: 'https://www.graakjaer.com/admin/public/getimage.ashx?Image=/Files/A-Photos/References/DK_industry/Undervisning/5089_ZBC_Zealand_business_College_1.jpg&Resolution=72&Compression=90&Width=767&Height=500&Crop=0'
+
+        Toolbar:
+            top: root.top
+            Label:
+                text: "1 day trip"
+            Button:
+                text: "2 day trip"
+                on_release: app.change_screen("second", "left")
+            Button:
+                text: "3 day trip"
+                on_release: app.change_screen("third", "left")
+        Toolbar:
+            Label:
+                text: "Longitude: {}".format(mapview.lon)
+            Label:
+                text: "Latitude: {}".format(mapview.lat)
+        Toolbar:
+            Label:
+                text: '1 day trip'
+
+<SecondScreen>:
+    name: 'second'
+
+    Content:
+        id: mapview
+        lat: 56
+        lon: 11.5
+        zoom: 9
+        size_hint: 1, 1
+        pos_hint: {"x": 0, "y": 0}
+        map_source: 'osm'
+
+        CityMarkerPopup:
+            latitude: 55.2258
+            longitude: 11.7595
+            title: 'Næstved'
+            description: 'Verdens navle. Danmarks New York. Capital of Cool.'
+            imageUrl: 'https://naestved.netavis.dk/wp-content/uploads/sites/6/2020/11/unnamed-24.jpg'
+
+        Toolbar:
+            top: root.top
+            Button:
+                text: "1 day trip"
+                on_release: app.change_screen("first", "right")
+            Label:
+                text: "2 day trip"
+            Button:
+                text: "3 day trip"
+                on_release: app.change_screen("third", "left")
+        Toolbar:
+            Label:
+                text: "Longitude: {}".format(mapview.lon)
+            Label:
+                text: "Latitude: {}".format(mapview.lat)
+        Toolbar:
+            Label:
+                text: '2 day trip'
+
+<ThirdScreen>:
+    name: 'third'
+
+    Content:
+        id: mapview
+        lat: 56
+        lon: 11.5
+        zoom: 9
+        size_hint: 1, 1
+        pos_hint: {"x": 0, "y": 0}
+        map_source: 'osm'
+
+
+        Toolbar:
+            top: root.top
+            Button:
+                text: "1 day trip"
+                on_release: app.change_screen("first", "right")
+            Button:
+                text: "2 day trip"
+                on_release: app.change_screen("second", "right")
+            Label:
+                text: "3 day trip"
+        Toolbar:
+            Label:
+                text: "Longitude: {}".format(mapview.lon)
+            Label:
+                text: "Latitude: {}".format(mapview.lat)
+        Toolbar:
+            Label:
+                text: '3 day trip'
