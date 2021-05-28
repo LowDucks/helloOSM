@@ -24,6 +24,16 @@
             pos: self.pos
             size: self.size
 
+<SkovMarker@POIMarkerPopup>:
+    source: 'Skov.png'
+
+<RestaurantMarker@POIMarkerPopup>:
+    source: 'Restaurant.png'
+
+<HotelMarker@POIMarkerPopup>:
+    source: 'Overnatning.png'
+
+
 <SchoolMarkerPopup@POIMarkerPopup>:
     source: 'schoolmarker.png'
 
@@ -71,8 +81,8 @@ ScreenManager:
 
     Content:
         id: mapview
-        lat: 56
-        lon: 11.5
+        lat: 54.8901
+        lon: 11.5315
         zoom: 9
         size_hint: 1, 1
         pos_hint: {"x": 0, "y": 0}
@@ -94,25 +104,49 @@ ScreenManager:
                 text: 'Home Screen'
 
 
-
 <FirstScreen>:
     name: 'first'
 
     Content:
         id: mapview
-        lat: 56
-        lon: 11.5
-        zoom: 9
+        lat: 55.0363
+        lon: 11.9225
+        zoom: 10
         size_hint: 1, 1
         pos_hint: {"x": 0, "y": 0}
         map_source: 'osm'
 
         SchoolMarkerPopup:
-            latitude: 55.0151
-            longitude: 11.9167
-            title: 'Zealand Business College, Teknisk Gymnasium Vordingborg'
+            latitude: 55.0124
+            longitude: 11.8999
+            title: 'Station'
             description: 'For de få men rå.'
-            imageUrl: 'https://www.graakjaer.com/admin/public/getimage.ashx?Image=/Files/A-Photos/References/DK_industry/Undervisning/5089_ZBC_Zealand_business_College_1.jpg&Resolution=72&Compression=90&Width=767&Height=500&Crop=0'
+            imageUrl: 'https://danskejernbaner.dk/medier/1000006302.jpg'
+
+        HotelMarker:
+            latitude: 55.0083
+            longitude: 11.9113
+            title: 'Vb Hotel'
+            description: 'For en god nat søvn i Vordingborg'
+            imageUrl: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/80619260.jpg?k=bb52d9f1bbd9efff981cdba6fe86403120cdcf06fa2239971a5b2813857e32b1&o=&hp=1'
+
+
+        SkovMarker:
+            latitude: 55.0045
+            longitude: 11.9334
+            title: 'Nyråd skov'
+            description: 'Hyggelig tur'
+            imageUrl: 'https://www.trae.dk/wp-content/uploads/2016/11/noerreskoven-soeren-foodgaa.png'
+
+
+        RestaurantMarker:
+            latitude: 55.0426
+            longitude: 11.9674
+            title: 'Ørslev Gril og Pizza'
+            description: 'Når du trænger til en pizza'
+            imageUrl: 'https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/192331044_532917977707636_3568308903670660094_n.png?_nc_cat=101&ccb=1-3&_nc_sid=ae9488&_nc_ohc=q7tyhalmQ-MAX9EutBl&_nc_ht=scontent-cph2-1.xx&oh=f9444cb7653bed548f9cff3e6f0a8018&oe=60D58D19'
+
+
 
         Toolbar:
             top: root.top
@@ -138,19 +172,58 @@ ScreenManager:
 
     Content:
         id: mapview
-        lat: 56
-        lon: 11.5
-        zoom: 9
+        lat: 54.9074
+        lon: 11.7786
+        zoom: 10
         size_hint: 1, 1
         pos_hint: {"x": 0, "y": 0}
         map_source: 'osm'
 
-        CityMarkerPopup:
-            latitude: 55.2258
-            longitude: 11.7595
-            title: 'Næstved'
-            description: 'Verdens navle. Danmarks New York. Capital of Cool.'
-            imageUrl: 'https://naestved.netavis.dk/wp-content/uploads/sites/6/2020/11/unnamed-24.jpg'
+
+        RestaurantMarker:
+            latitude: 54.7747
+            longitude: 11.5070
+            title: 'smag spiseri'
+            description: 'Dumt navn men smager vel fint'
+            imageUrl: 'https://www.graakjaer.com/admin/public/getimage.ashx?Image=/Files/A-Photos/References/DK_industry/Undervisning/5089_ZBC_Zealand_business_College_1.jpg&Resolution=72&Compression=90&Width=767&Height=500&Crop=0'
+
+
+        SchoolMarkerPopup:
+            latitude: 55.0124
+            longitude: 11.8999
+            title: 'Station'
+            description: 'For de få men rå.'
+            imageUrl: 'https://www.graakjaer.com/admin/public/getimage.ashx?Image=/Files/A-Photos/References/DK_industry/Undervisning/5089_ZBC_Zealand_business_College_1.jpg&Resolution=72&Compression=90&Width=767&Height=500&Crop=0'
+
+        HotelMarker:
+            latitude: 54.8451
+            longitude: 11.4892
+            title: 'Brandholm'
+            description: 'Hvis du skal bruge dine skattepenge på noget'
+            imageUrl: 'https://scontent.xx.fbcdn.net/v/t1.15752-0/p403x403/191751546_183593790327080_7577142206806735201_n.png?_nc_cat=101&ccb=1-3&_nc_sid=aee45a&_nc_ohc=CGhh_x-NQZwAX_GXhAb&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&tp=30&oh=fc6d2286a4791b33475fc133bf37f3fe&oe=60D82EDD'
+
+        HotelMarker:
+            latitude: 55.0083
+            longitude: 11.9113
+            title: 'Vb Hotel'
+            description: 'For en god nat søvn i Vordingborg'
+            imageUrl: 'https://www.graakjaer.com/admin/public/getimage.ashx?Image=/Files/A-Photos/References/DK_industry/Undervisning/5089_ZBC_Zealand_business_College_1.jpg&Resolution=72&Compression=90&Width=767&Height=500&Crop=0'
+
+        SkovMarker:
+            latitude: 54.7566
+            longitude: 11.5103
+            title: 'Skov og sø maribo'
+            description: 'Skov og sø altid dejlig tur :)'
+            imageUrl: 'https://www.graakjaer.com/admin/public/getimage.ashx?Image=/Files/A-Photos/References/DK_industry/Undervisning/5089_ZBC_Zealand_business_College_1.jpg&Resolution=72&Compression=90&Width=767&Height=500&Crop=0'
+
+        RestaurantMarker:
+            latitude: 54.7996
+            longitude: 11.6374
+            title: 'Cafe Hülya'
+            description: 'Cafe hülya.. men det en restaurant?'
+            imageUrl: 'https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/193203188_148976143825690_8755634060038759371_n.png?_nc_cat=104&ccb=1-3&_nc_sid=ae9488&_nc_ohc=ndvkioIqL-AAX9fG-AB&_nc_ht=scontent-cph2-1.xx&oh=f534cbfc24fa713d57789f7ba8b6872f&oe=60D6A02D'
+
+
 
         Toolbar:
             top: root.top
@@ -176,12 +249,84 @@ ScreenManager:
 
     Content:
         id: mapview
-        lat: 56
-        lon: 11.5
-        zoom: 9
+        lat: 54.8901
+        lon: 11.5315
+        zoom: 10
         size_hint: 1, 1
         pos_hint: {"x": 0, "y": 0}
         map_source: 'osm'
+
+        RestaurantMarker:
+            latitude: 54.7747
+            longitude: 11.5070
+            title: 'smag spiseri'
+            description: 'Dumt navn men smager vel fint'
+            imageUrl: 'https://www.graakjaer.com/admin/public/getimage.ashx?Image=/Files/A-Photos/References/DK_industry/Undervisning/5089_ZBC_Zealand_business_College_1.jpg&Resolution=72&Compression=90&Width=767&Height=500&Crop=0'
+
+
+        SchoolMarkerPopup:
+            latitude: 55.0124
+            longitude: 11.8999
+            title: 'Station'
+            description: 'For de få men rå.'
+            imageUrl: 'https://www.graakjaer.com/admin/public/getimage.ashx?Image=/Files/A-Photos/References/DK_industry/Undervisning/5089_ZBC_Zealand_business_College_1.jpg&Resolution=72&Compression=90&Width=767&Height=500&Crop=0'
+
+        HotelMarker:
+            latitude: 54.8451
+            longitude: 11.4892
+            title: 'Brandholm'
+            description: 'Hvis du skal bruge dine skattepenge på noget'
+            imageUrl: 'https://scontent.xx.fbcdn.net/v/t1.15752-0/p403x403/191751546_183593790327080_7577142206806735201_n.png?_nc_cat=101&ccb=1-3&_nc_sid=aee45a&_nc_ohc=CGhh_x-NQZwAX_GXhAb&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&tp=30&oh=fc6d2286a4791b33475fc133bf37f3fe&oe=60D82EDD'
+
+        HotelMarker:
+            latitude: 55.0083
+            longitude: 11.9113
+            title: 'Vb Hotel'
+            description: 'For en god nat søvn i Vordingborg'
+            imageUrl: 'https://www.graakjaer.com/admin/public/getimage.ashx?Image=/Files/A-Photos/References/DK_industry/Undervisning/5089_ZBC_Zealand_business_College_1.jpg&Resolution=72&Compression=90&Width=767&Height=500&Crop=0'
+
+        SkovMarker:
+            latitude: 54.7566
+            longitude: 11.5103
+            title: 'Skov og sø maribo'
+            description: 'Skov og sø altid dejlig tur :)'
+            imageUrl: 'https://www.graakjaer.com/admin/public/getimage.ashx?Image=/Files/A-Photos/References/DK_industry/Undervisning/5089_ZBC_Zealand_business_College_1.jpg&Resolution=72&Compression=90&Width=767&Height=500&Crop=0'
+
+        RestaurantMarker:
+            latitude: 54.7996
+            longitude: 11.6374
+            title: 'Cafe Hülya'
+            description: 'Cafe hülya.. men det en restaurant?'
+            imageUrl: 'https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/193203188_148976143825690_8755634060038759371_n.png?_nc_cat=104&ccb=1-3&_nc_sid=ae9488&_nc_ohc=ndvkioIqL-AAX9fG-AB&_nc_ht=scontent-cph2-1.xx&oh=f534cbfc24fa713d57789f7ba8b6872f&oe=60D6A02D'
+
+
+        RestaurantMarker:
+            latitude: 54.9145
+            longitude: 11.3584
+            title: 'Kragenæs Havn'
+            description: 'ISBUTIIIK'
+            imageUrl: 'https://scontent.xx.fbcdn.net/v/t1.15752-0/p403x403/192249967_306707920994784_5097938746907276243_n.png?_nc_cat=109&ccb=1-3&_nc_sid=aee45a&_nc_ohc=m-RI6D2b3AMAX9cFQS7&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&tp=30&oh=deefb30d73c5fedf34427fa1743c7041&oe=60D80C3C'
+
+        RestaurantMarker:
+            latitude: 54.9160
+            longitude: 11.35
+            title: 'Cafe Udsigten'
+            description: 'Neej en pæn udsigt'
+            imageUrl: 'https://scontent.xx.fbcdn.net/v/t1.15752-0/p350x350/193116004_523588565678754_5715549019917029865_n.png?_nc_cat=100&ccb=1-3&_nc_sid=aee45a&_nc_ohc=-NFFZ8Js2aUAX90wYKZ&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&tp=30&oh=564545b35a43375ec337992d7cebf168&oe=60D6FD83'
+
+        SkovMarker:
+            latitude: 54.9069
+            longitude: 11.3567
+            title: 'doddedkaidereere'
+            description: 'Sten statuer jeg ikke kan stave til.'
+            imageUrl: 'https://www.graakjaer.com/admin/public/getimage.ashx?Image=/Files/A-Photos/References/DK_industry/Undervisning/5089_ZBC_Zealand_business_College_1.jpg&Resolution=72&Compression=90&Width=767&Height=500&Crop=0'
+
+        HotelMarker:
+            latitude: 54.9034
+            longitude: 11.2587
+            title: 'Pederstrup bed and breakfast'
+            description: 'Lækker breakfast, og bodel i nærheden fejler intet :)'
+            imageUrl: 'https://scontent.xx.fbcdn.net/v/t1.15752-0/p403x403/191378592_321401402889349_987601653613748991_n.png?_nc_cat=105&ccb=1-3&_nc_sid=aee45a&_nc_ohc=OtfKRIo88y8AX9Z3_84&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&tp=30&oh=e9be0e882472f35cbf6398192236b6a8&oe=60D4B475'
 
 
         Toolbar:
